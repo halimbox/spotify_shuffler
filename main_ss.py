@@ -85,12 +85,15 @@ with st.expander('List of current playlists'):
     
     st.header("List of playlist")
     
-    sp=connect(scope='user-library_read', username=username)
     
-    df, test=get_data(sp, username)
+    if st.button('Refresh playlists'):
+        sp=connect(scope='user-library_read', username=username)
+        df, test=get_data(sp, username)
+        
+    else:
+        df = pd.read_pickle('./spotify.pkl')
     st.dataframe(df)
     
-    st.text(test)
     
     
 with st.expander('What do your playlists look like?'):
