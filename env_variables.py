@@ -9,5 +9,5 @@ from datetime import datetime
 import os
 os.environ['SPOTIPY_CLIENT_ID'] = "fc99466410414fbb9aaafbfe76ab5a1d"
 os.environ['SPOTIPY_CLIENT_SECRET'] = "83577093a17d4db3989a074b85b7905a"
-#os.environ['SPOTIPY_REDIRECT_URI'] = "http://127.0.0.1:1234"
-os.environ['SPOTIPY_REDIRECT_URI'] = "https://halimbox-spotify-shuffler-main-ss-p7ac1f.streamlitapp.com:1234"
+#os.environ['SPOTIPY_REDIRECT_URI'] = "http://127.0.0.1:1234/callback/"
+os.environ['SPOTIPY_REDIRECT_URI'] = "https://halimbox-spotify-shuffler-main-ss-p7ac1f.streamlitapp.com:1234/callback/"
