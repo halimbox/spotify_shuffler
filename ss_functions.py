@@ -196,16 +196,18 @@ def get_data(sp, username):
 #     st.dataframe(pl)
 #     return df 
 
-def EDA(df):
+def EDA(df, st):
     st.header("EDA")
     #Key Metrics
     f_value=st.selectbox('Select a playlist', df.playlist.unique())
     dff=df[df.playlist==f_value]
     
-    cols=['danceability','energy','acousticness','tempo','loudness','valence']
-    for col in cols[:2]:
-        temp=dff.describe().loc['mean',:][col]
-        st.metric(col, '{:.1%}'.format(temp))
+    features=['danceability','energy','acousticness','tempo','loudness','valence']
+    for i, feature in enumerate(features):
+ 
+        temp=dff.describe().loc['mean',:][feature]
+        st.metric(feature, '{:.1%}'.format(temp))
+    
     
     st.text('Top songs from that album:')
     st.dataframe(dff)
